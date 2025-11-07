@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-/* optional */
-:root { color-scheme: dark; }
-html, body { height: 100%; }
+/* Cyber background */
+.bg-cyber{
+  background:
+    radial-gradient(900px 400px at 12% -5%, rgba(16,185,129,.14), transparent 60%),
+    radial-gradient(900px 400px at 95% 0%, rgba(34,211,238,.12), transparent 55%),
+    linear-gradient(180deg, #0a0a0a 0%, #0b0f14 100%);
+}
+
+/* Reveal: visible by default */
+.reveal{
+  opacity:1;
+  transform:none;
+  transition:opacity .6s ease, transform .6s ease;
+}
+.reveal.in-view{
+  opacity:1;
+  transform:none;
+}
+
+/* فقط اللي تحبّو يتحرّك */
+.reveal.will-animate{
+  opacity:0;
+  transform:translateY(14px) scale(.98);
+}
+.reveal.will-animate.in-view{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .reveal,
+  .reveal.will-animate,
+  .reveal.will-animate.in-view{
+    transition:none; transform:none; opacity:1;
+  }
+}
+
+html { scroll-behavior: smooth; }
