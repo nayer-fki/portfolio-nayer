@@ -79,7 +79,7 @@ const PROJECTS: Project[] = [
     org: "IT BUSINESS SCHOOL",
     category: "ML/AI",
     summary:
-      "CNN على صور X-ray: Backend FastAPI + Front React، solution Docker قابلة للنشر على GCP.",
+      "CNN pour X-ray: Backend FastAPI + Front React، solution Docker avec deployement GCP.",
     bullets: [
       "Prétraitement dataset & entraînement CNN",
       "API de prédiction FastAPI",
@@ -94,7 +94,7 @@ const PROJECTS: Project[] = [
     period: "nov. 2024 – janv. 2025",
     category: "ML/AI",
     summary:
-      "Pipeline TTS: préparation dataset, features MFCC/spectrogrammes، modèles KNN/LR/DT، métriques و visualisation.",
+      "Pipeline TTS: préparation dataset, features MFCC/spectrogrammes، modèles KNN/LR/DT، métriques et visualisation.",
     bullets: ["Librosa + features audio", "Modèles classiques ML + comparaison", "Dashboard résultats"],
     stack: ["Python", "Librosa", "scikit-learn", "Flask/Jupyter"],
     image: "/images/projects/tts.jpg",
