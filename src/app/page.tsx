@@ -106,7 +106,7 @@ export default function Home() {
           {projects.slice(0, 4).map((project) => (
             <article key={project.title} className="surface-card group overflow-hidden rounded-2xl">
               <div className="relative overflow-hidden">
-                <Image src={project.image} alt="" width={900} height={540} className="h-52 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+                <Image src={project.image} alt={`${project.title} interface`} width={900} height={506} className="aspect-video w-full object-cover object-top opacity-90 transition duration-500 group-hover:scale-[1.02] group-hover:opacity-100" />
                 {project.logo && <span className="absolute bottom-4 left-4 grid h-12 w-12 place-items-center overflow-hidden rounded-xl border border-white/15 bg-white p-1.5 shadow-xl"><Image src={project.logo} alt={`${project.title} logo`} width={48} height={48} className="h-full w-full object-contain" /></span>}
               </div>
               <div className="p-6">
