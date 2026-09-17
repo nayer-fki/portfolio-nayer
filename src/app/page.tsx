@@ -49,7 +49,7 @@ export default function Home() {
               <div className="absolute -inset-px -z-10 rounded-3xl bg-gradient-to-br from-blue-400/30 to-cyan-400/5 blur-xl" />
               <Image src="/nayer.jpg" width={768} height={768} alt="Portrait of Nayer Fki" priority className="aspect-square w-full rounded-2xl object-cover" />
               <div className="grid grid-cols-3 gap-2 p-3 pb-1 pt-4 text-center">
-                <div><strong className="block text-lg text-white">15</strong><span className="text-[11px] text-slate-400">Projects</span></div>
+                <div><strong className="block text-lg text-white">16</strong><span className="text-[11px] text-slate-400">Projects</span></div>
                 <div className="border-x border-white/10"><strong className="block text-lg text-white">9</strong><span className="text-[11px] text-slate-400">Certificates</span></div>
                 <div><strong className="block text-lg text-white">4</strong><span className="text-[11px] text-slate-400">Core areas</span></div>
               </div>
@@ -114,7 +114,10 @@ export default function Home() {
                 <h3 className="mt-2 text-lg font-semibold text-white">{project.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-400">{project.summary}</p>
                 <div className="mt-5 flex flex-wrap gap-2">{project.stack.slice(0, 4).map((item) => <span key={item} className="text-xs text-slate-300">#{item.replaceAll(" ", "")}</span>)}</div>
-                {project.caseStudyHref && <Link href={project.caseStudyHref} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-300 hover:text-blue-200">Read case study <Arrow /></Link>}
+                <div className="mt-5 flex flex-wrap gap-4">
+                  {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-300 hover:text-emerald-200">Live app <span aria-hidden="true">↗</span></a>}
+                  {project.caseStudyHref && <Link href={project.caseStudyHref} className="inline-flex items-center gap-2 text-sm font-semibold text-blue-300 hover:text-blue-200">Read case study <Arrow /></Link>}
+                </div>
               </div>
             </article>
           ))}

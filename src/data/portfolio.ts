@@ -13,6 +13,8 @@ export type Project = {
   repository?: string;
   repositoryLabel?: string;
   caseStudyHref?: string;
+  liveUrl?: string;
+  liveLabel?: string;
 };
 
 export type Experience = {
@@ -73,6 +75,8 @@ export const projects: Project[] = [
     repository: "https://gitlab.com/Mohammed_KHNine/speedline",
     repositoryLabel: "Private GitLab repository",
     caseStudyHref: "/projects/devwiseops#product-missions",
+    liveUrl: "https://speedlineapp.tn",
+    liveLabel: "Open production app",
   },
   {
     title: "Planify — K3s and GitOps Delivery",
@@ -130,11 +134,31 @@ export const projects: Project[] = [
     repository: "https://gitlab.com/Mohammed_KHNine/EXAM_GEN",
     repositoryLabel: "Private GitLab repository",
     caseStudyHref: "/projects/devwiseops#product-missions",
+    liveUrl: "https://exambuilder.tn",
+    liveLabel: "Open production app",
+  },
+  {
+    title: "Sœurise — Multi-Vendor Commerce Integrations",
+    period: "2026",
+    organization: "Cafee Agency · Freelance client project",
+    category: "Software",
+    summary:
+      "Extended a multi-vendor marketplace with payment orchestration and carrier integrations spanning customer checkout, seller operations, and shipment tracking.",
+    highlights: [
+      "Implemented Stripe Connect onboarding, marketplace commissions, multi-shop payment splits, webhook processing, transfers, and refund-aware order flows",
+      "Built Mondial Relay checkout, pickup-point selection, shop-level configuration, shipment, label, tracking, and seller analytics workflows",
+      "Integrated Boxtal API v3 authentication, relay search, home and relay shipping orders, labels, tracking, signed webhooks, sandbox/production configuration, and operational tests",
+    ],
+    stack: ["Next.js", "Node.js", "Express", "MongoDB", "Stripe Connect", "Mondial Relay", "Boxtal", "Docker"],
+    image: "/images/projects/soeurise.jpg",
+    logo: "/images/projects/logos/soeurise.png",
+    repository: "https://github.com/mohamedaziz2025/shop-by-soeurise",
+    repositoryLabel: "Private client repository",
   },
   {
     title: "MediCore AI",
     period: "2026",
-    organization: "Independent engineering project",
+    organization: "Cafee Agency · Engineering project",
     category: "AI",
     summary:
       "An intelligent medical-practice platform combining patient operations, supervised AI workflows, mobile access, and governed business intelligence.",
@@ -326,6 +350,21 @@ export const experiences: Experience[] = [
       "Validated targeted workflows with automated Java, Go, Python, Playwright, smoke, and load-testing suites",
     ],
     stack: ["DevSecOps", "GitOps", "GitLab CI/CD", "K3s", "Terraform", "Spring Boot", "Angular", "Observability"],
+  },
+  {
+    company: "Cafee Agency",
+    role: "Freelance Software Integration Engineer",
+    type: "Freelance",
+    location: "Remote",
+    period: "2026",
+    logo: "/images/companies/cafee-agency.jpeg",
+    highlights: [
+      "Extended the Sœurise multi-vendor marketplace across customer, seller, and administrator workflows",
+      "Implemented Stripe Connect onboarding, commission splits, payment webhooks, transfers, and refund-aware order processing",
+      "Integrated Mondial Relay and Boxtal for pickup points, delivery pricing, shipping orders, labels, tracking, and signed webhooks",
+      "Prepared Docker-based production deployment behind a shared Nginx reverse proxy and separated sandbox and production carrier configuration",
+    ],
+    stack: ["Next.js", "Node.js", "Express", "MongoDB", "Stripe Connect", "Mondial Relay", "Boxtal", "Docker", "Nginx"],
   },
   {
     company: "Tunisie Telecom",

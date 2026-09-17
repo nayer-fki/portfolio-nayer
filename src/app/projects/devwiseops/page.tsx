@@ -36,6 +36,7 @@ const productMissions = [
     scope: "GCP migration and OVHcloud target",
     logo: "/images/projects/logos/speedline.png",
     repository: "https://gitlab.com/Mohammed_KHNine/speedline",
+    live: "https://speedlineapp.tn",
     mission:
       "Audited the legacy GCP infrastructure and built the OVHcloud K3s/GitOps target with Terraform, Argo CD, Kustomize, Traefik, and 23 managed components.",
     environment:
@@ -69,6 +70,7 @@ const productMissions = [
     scope: "Production infrastructure and Grafana",
     logo: "/images/projects/logos/exambuilder.jpg",
     repository: "https://gitlab.com/Mohammed_KHNine/EXAM_GEN",
+    live: "https://exambuilder.tn",
     mission:
       "Implemented layered K3s infrastructure and GitOps promotion with separate staging/production concerns, protected delivery jobs, smoke checks, and production operations.",
     environment:
@@ -149,6 +151,7 @@ export default function DevWiseOpsCaseStudy() {
                   </details>
                 </div>
                 <div className="mt-6 flex flex-wrap gap-4">
+                  {product.live && <a href={product.live} target="_blank" rel="noreferrer" className="text-sm font-semibold text-emerald-300 hover:text-emerald-200">Open production app <span aria-hidden="true">↗</span></a>}
                   <a href={product.repository} target="_blank" rel="noreferrer" className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-blue-300 hover:text-blue-200"><Image src="/icons/gitlab.svg" alt="" width={17} height={17} />Open private GitLab project <span aria-hidden="true">↗</span></a>
                   {product.monitoring && <a href={product.monitoring} target="_blank" rel="noreferrer" className="text-sm font-semibold text-blue-300 hover:text-blue-200">Open protected Grafana <span aria-hidden="true">↗</span></a>}
                 </div>

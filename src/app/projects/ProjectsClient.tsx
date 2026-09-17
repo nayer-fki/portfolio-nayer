@@ -61,6 +61,7 @@ export default function ProjectsClient({ projects }: { projects: Project[] }) {
               </details>
               <div className="mt-5 flex flex-wrap gap-2">{project.stack.slice(0, 6).map((item) => <span key={item} className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-slate-300">{item}</span>)}{project.stack.length > 6 && <span className="px-1 py-1 text-xs text-slate-500">+{project.stack.length - 6}</span>}</div>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+                {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noreferrer" className="text-sm font-semibold text-emerald-300 hover:text-emerald-200">{project.liveLabel ?? "Open live application"} <span aria-hidden="true">↗</span></a>}
                 {project.caseStudyHref && <Link href={project.caseStudyHref} className="text-sm font-semibold text-blue-300 hover:text-blue-200">Read case study <span aria-hidden="true">→</span></Link>}
                 {project.repository && <a href={project.repository} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-300 hover:text-blue-200"><Image src={project.repository.includes("gitlab.com") ? "/icons/gitlab.svg" : "/icons/github.svg"} alt="" width={16} height={16} />{project.repositoryLabel ?? "View repository"} <span aria-hidden="true">↗</span></a>}
               </div>
