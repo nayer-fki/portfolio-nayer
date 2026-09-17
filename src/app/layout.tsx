@@ -1,17 +1,25 @@
-// src/app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Nayer Fki — Network & Cybersecurity Engineer",
+  title: {
+    default: "Nayer Fki | DevOps & Software Engineer",
+    template: "%s | Nayer Fki",
+  },
   description:
-    "Secure networks (VLAN/DMZ/ASA, SIEM) & modern web apps (MERN/Next.js). Open for PFE.",
+    "DevOps and Software Engineer focused on cloud infrastructure, automation, secure systems, and reliable web applications.",
+  keywords: ["DevOps Engineer", "Software Engineer", "Cloud Engineer", "Docker", "Kubernetes", "Next.js", "Tunisia"],
+  openGraph: {
+    title: "Nayer Fki | DevOps & Software Engineer",
+    description: "Cloud infrastructure, delivery automation, secure systems, and dependable software.",
+    type: "website",
+  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="bg-black text-white antialiased">{children}</body>
+      <body className="bg-[#070b14] text-slate-50 antialiased">{children}</body>
     </html>
   );
 }

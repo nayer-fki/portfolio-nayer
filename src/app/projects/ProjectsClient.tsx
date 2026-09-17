@@ -1,142 +1,64 @@
 "use client";
 
-import { useMemo, useState } from "react";
 import Image from "next/image";
-import type { Project } from "./page";
+import { useMemo, useState } from "react";
+import type { Project, ProjectCategory } from "@/data/portfolio";
 
-const FILTERS = ["All", "Network", "DevOps/Cloud", "ML/AI", "Web/JEE"] as const;
-type Filter = (typeof FILTERS)[number];
+const filters: Array<"All" | ProjectCategory> = ["All", "DevOps", "Cloud", "Software", "AI"];
 
 export default function ProjectsClient({ projects }: { projects: Project[] }) {
-  const [filter, setFilter] = useState<Filter>("All");
-  const [q, setQ] = useState("");
+  const [filter, setFilter] = useState<(typeof filters)[number]>("All");
+  const [query, setQuery] = useState("");
 
-  const list = useMemo(() => {
-    const byFilter =
-      filter === "All" ? projects : projects.filter((p) => p.category === filter);
-    const byQuery = q.trim()
-      ? byFilter.filter(
-          (p) =>
-            p.title.toLowerCase().includes(q.toLowerCase()) ||
-            p.stack.join(" ").toLowerCase().includes(q.toLowerCase())
-        )
-      : byFilter;
-    return byQuery;
-  }, [projects, filter, q]);
+  const visibleProjects = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase();
+    return projects.filter((project) => {
+      const matchesCategory = filter === "All" || project.category === filter;
+      const matchesQuery = !normalizedQuery || [project.title, project.summary, ...project.stack].join(" ").toLowerCase().includes(normalizedQuery);
+      return matchesCategory && matchesQuery;
+    });
+  }, [filter, projects, query]);
 
   return (
-    <>
-      <section className="mx-auto max-w-6xl px-6">
-        <div className="mt-5 flex flex-wrap items-center gap-2">
-          {FILTERS.map((f) => (
-            <button
-              key={f}
-              onClick={() => setFilter(f)}
-              className={`rounded-full border px-3 py-1.5 text-sm transition ${
-                filter === f
-                  ? "border-emerald-400/40 bg-emerald-500/10 text-emerald-300"
-                  : "border-white/10 bg-white/5 text-neutral-300 hover:border-white/20"
-              }`}
-            >
-              {f}
+    <section className="mx-auto max-w-6xl px-6 py-12 sm:py-16">
+      <div className="flex flex-col gap-4 border-b border-white/10 pb-6 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-wrap gap-2" aria-label="Project categories">
+          {filters.map((item) => (
+            <button key={item} type="button" aria-pressed={filter === item} onClick={() => setFilter(item)} className={`rounded-lg border px-3.5 py-2 text-sm transition ${filter === item ? "border-blue-400/40 bg-blue-500/10 text-blue-200" : "border-white/10 text-slate-400 hover:border-white/20 hover:text-white"}`}>
+              {item}
             </button>
           ))}
-          <input
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-            placeholder="Search (stack, title...)"
-            className="ml-auto w-full max-w-xs rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:border-emerald-400/40"
-          />
         </div>
-      </section>
+        <label className="relative block md:w-72">
+          <span className="sr-only">Search projects</span>
+          <svg className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6" stroke="currentColor" strokeWidth="1.8" /><path d="m16 16 4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search by title or technology" className="w-full rounded-lg border border-white/10 bg-white/[0.03] py-2.5 pl-10 pr-3 text-sm text-white outline-none placeholder:text-slate-600 focus:border-blue-400/50" />
+        </label>
+      </div>
 
-      <section className="mx-auto max-w-6xl px-6 py-10">
-        <div className="grid gap-6 md:grid-cols-2">
-          {list.map((p, i) => (
-            <article
-              key={i}
-              className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur transition hover:border-emerald-400/30"
-            >
-              {p.image && (
-                <Image
-                  src={p.image}
-                  alt={p.title}
-                  width={1200}
-                  height={640}
-                  className="h-44 w-full object-cover"
-                />
-              )}
-
-              <div className="p-5">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-base font-semibold leading-tight">{p.title}</h3>
-                    <p className="text-xs text-neutral-400">
-                      {p.org ? `${p.org} · ` : ""} {p.period} ·{" "}
-                      <span className="text-emerald-300">{p.category}</span>
-                    </p>
-                  </div>
-                </div>
-
-                <p className="mt-3 text-sm text-neutral-300">{p.summary}</p>
-
-                {p.bullets?.length ? (
-                  <ul className="mt-3 space-y-1.5 text-sm text-neutral-300">
-                    {p.bullets.map((b, k) => (
-                      <li key={k} className="flex gap-2">
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400/90" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {p.stack.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-neutral-300"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                {/* روابط الريبو والديمو فقط */}
-                <div className="mt-4 flex flex-wrap items-center gap-2">
-                  {p.repo && (
-                    <a
-                      href={p.repo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-xl border border-neutral-700 px-3 py-1.5 text-sm hover:border-neutral-500"
-                    >
-                      <Image src="/icons/github.svg" alt="GitHub" width={16} height={16} />
-                      Repository
-                    </a>
-                  )}
-                  {p.demo && (
-                    <a
-                      href={p.demo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-xl border border-neutral-700 px-3 py-1.5 text-sm hover:border-neutral-500"
-                    >
-                      Live Demo
-                    </a>
-                  )}
-                </div>
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        {visibleProjects.map((project) => (
+          <article key={project.title} className="surface-card group overflow-hidden rounded-2xl">
+            <div className="overflow-hidden"><Image src={project.image} alt="" width={1200} height={640} className="h-52 w-full object-cover opacity-85 transition duration-500 group-hover:scale-[1.02] group-hover:opacity-100" /></div>
+            <div className="p-6">
+              <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
+                <span className="font-semibold uppercase tracking-wider text-blue-300">{project.category}</span>
+                <span className="text-slate-500">{project.period}</span>
               </div>
-            </article>
-          ))}
-        </div>
+              <h2 className="mt-3 text-xl font-semibold text-white">{project.title}</h2>
+              {project.organization && <p className="mt-1 text-xs text-slate-500">{project.organization}</p>}
+              <p className="mt-4 text-sm leading-6 text-slate-400">{project.summary}</p>
+              <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-300">
+                {project.highlights.map((highlight) => <li key={highlight} className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400" /><span>{highlight}</span></li>)}
+              </ul>
+              <div className="mt-5 flex flex-wrap gap-2">{project.stack.map((item) => <span key={item} className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-slate-300">{item}</span>)}</div>
+              {project.repository && <a href={project.repository} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-300 hover:text-blue-200"><Image src="/icons/github.svg" alt="" width={16} height={16} />View repository <span aria-hidden="true">↗</span></a>}
+            </div>
+          </article>
+        ))}
+      </div>
 
-        {list.length === 0 && (
-          <div className="mt-10 rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-neutral-400">
-            No projects for this filter/search.
-          </div>
-        )}
-      </section>
-    </>
+      {visibleProjects.length === 0 && <div className="surface-card mt-8 rounded-2xl p-8 text-center text-slate-400">No projects match your search.</div>}
+    </section>
   );
 }
