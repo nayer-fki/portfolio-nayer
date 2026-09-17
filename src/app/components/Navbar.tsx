@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const navigation = [
   { href: "/#about", label: "About" },
@@ -16,7 +17,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#070b14]/85 backdrop-blur-xl">
+    <header className="site-header sticky top-0 z-50 border-b border-white/10 backdrop-blur-xl">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6" aria-label="Main navigation">
         <Link href="/" className="flex items-center gap-3" aria-label="Nayer Fki, home">
           <span className="grid h-9 w-9 place-items-center rounded-lg bg-blue-500 text-sm font-bold text-white shadow-lg shadow-blue-500/20">NF</span>
@@ -42,6 +43,7 @@ export default function Navbar() {
           <a href="https://gitlab.com/nayer-fki" target="_blank" rel="noreferrer" className="rounded-lg p-2 opacity-70 transition hover:bg-white/5 hover:opacity-100" aria-label="GitLab profile">
             <Image src="/icons/gitlab.svg" alt="" width={18} height={18} />
           </a>
+          <ThemeToggle />
           <a href="/Nayer_Fki_CV.pdf" className="ml-2 rounded-lg bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-400">Resume</a>
         </div>
 
@@ -53,15 +55,16 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div id="mobile-navigation" className="border-t border-white/10 bg-[#070b14] px-6 py-4 md:hidden">
+        <div id="mobile-navigation" className="mobile-navigation border-t border-white/10 px-6 py-4 md:hidden">
           <div className="mx-auto grid max-w-6xl gap-1">
             {navigation.map((item) => (
               <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm text-slate-300 hover:bg-white/5 hover:text-white">{item.label}</Link>
             ))}
-            <div className="mt-2 flex gap-4 px-3 text-sm text-slate-400">
+            <div className="mt-2 flex items-center gap-4 px-3 text-sm text-slate-400">
               <a href="https://github.com/nayer-fki" target="_blank" rel="noreferrer" className="hover:text-white">GitHub</a>
               <a href="https://gitlab.com/nayer-fki" target="_blank" rel="noreferrer" className="hover:text-white">GitLab</a>
               <a href="https://www.linkedin.com/in/nayer-fki-26439026a" target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn</a>
+              <ThemeToggle />
             </div>
             <a href="/Nayer_Fki_CV.pdf" className="mt-2 rounded-lg bg-blue-500 px-3 py-2.5 text-center text-sm font-semibold text-white">Download resume</a>
           </div>

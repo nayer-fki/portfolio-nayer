@@ -18,8 +18,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className="bg-[#070b14] text-slate-50 antialiased">{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('portfolio-theme');var l=t?t==='light':window.matchMedia('(prefers-color-scheme: light)').matches;document.documentElement.classList.toggle('light',l)}catch(e){}})()` }} />
+      </head>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
