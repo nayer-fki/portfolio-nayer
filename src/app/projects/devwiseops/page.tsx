@@ -35,7 +35,6 @@ const productMissions = [
     name: "Speedline",
     scope: "GCP migration and OVHcloud target",
     logo: "/images/projects/logos/speedline.png",
-    repository: "https://gitlab.com/Mohammed_KHNine/speedline",
     live: "https://speedlineapp.tn",
     mission:
       "Audited the legacy GCP infrastructure and built the OVHcloud K3s/GitOps target with Terraform, Argo CD, Kustomize, Traefik, and 23 managed components.",
@@ -47,7 +46,6 @@ const productMissions = [
     name: "Planify",
     scope: "Selective CI/CD and GitOps delivery",
     logo: "/images/projects/logos/planify.png",
-    repository: "https://gitlab.com/Mohammed_KHNine/sma",
     mission:
       "Provisioned an OVH VPS, K3s namespaces, and Argo CD with Terraform; created seven reusable Helm charts and 19 staging applications for the Angular frontend and selected microservices.",
     environment:
@@ -58,7 +56,6 @@ const productMissions = [
     name: "Helpify",
     scope: "Progressive DevSecOps migration",
     logo: "/images/projects/logos/helpify.png",
-    repository: "https://gitlab.com/Mohammed_KHNine/helpify",
     mission:
       "Created a dedicated Terraform, K3s, Argo CD, and Kustomize foundation, then ordered platform, data, microservice, translation, and interface delivery by dependency.",
     environment:
@@ -69,7 +66,6 @@ const productMissions = [
     name: "ExamBuilder",
     scope: "Production infrastructure and Grafana",
     logo: "/images/projects/logos/exambuilder.jpg",
-    repository: "https://gitlab.com/Mohammed_KHNine/EXAM_GEN",
     live: "https://exambuilder.tn",
     mission:
       "Implemented layered K3s infrastructure and GitOps promotion with separate staging/production concerns, protected delivery jobs, smoke checks, and production operations.",
@@ -98,7 +94,6 @@ export default function DevWiseOpsCaseStudy() {
               <h1 className="text-balance mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl">DevWiseOps</h1>
               <p className="mt-4 max-w-3xl text-xl leading-8 text-slate-300">Design and implementation of a multi-product DevSecOps/GitOps infrastructure and an intelligent centralized operations platform.</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="https://gitlab.com/Mohammed_KHNine/devwiseops" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-blue-500 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-400"><Image src="/icons/gitlab.svg" alt="" width={18} height={18} />Private GitLab repository <span aria-hidden="true">↗</span></a>
                 <a href="mailto:nayerfki5@gmail.com?subject=DevWiseOps%20project" className="rounded-lg border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">Request more information</a>
               </div>
             </div>
@@ -127,7 +122,7 @@ export default function DevWiseOpsCaseStudy() {
         <div id="product-missions" className="scroll-mt-24 pt-16">
           <p className="eyebrow">Product-by-product missions</p>
           <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-white">A precise infrastructure mission for every product.</h2>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-slate-400">Each card separates implemented work, validation evidence, and remaining scope. The links provide direct access to the corresponding private GitLab project.</p>
+          <p className="mt-4 max-w-3xl text-base leading-7 text-slate-400">Each card separates implemented work, validation evidence, and remaining scope. Source repositories remain private; only verified public applications are linked.</p>
           <div className="mt-8 grid gap-5 lg:grid-cols-2">
             {productMissions.map((product) => (
               <article key={product.name} className="surface-card flex h-full flex-col rounded-2xl p-6">
@@ -152,7 +147,6 @@ export default function DevWiseOpsCaseStudy() {
                 </div>
                 <div className="mt-6 flex flex-wrap gap-4">
                   {product.live && <a href={product.live} target="_blank" rel="noreferrer" className="text-sm font-semibold text-emerald-300 hover:text-emerald-200">Open production app <span aria-hidden="true">↗</span></a>}
-                  <a href={product.repository} target="_blank" rel="noreferrer" className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-blue-300 hover:text-blue-200"><Image src="/icons/gitlab.svg" alt="" width={17} height={17} />Open private GitLab project <span aria-hidden="true">↗</span></a>
                   {product.monitoring && <a href={product.monitoring} target="_blank" rel="noreferrer" className="text-sm font-semibold text-blue-300 hover:text-blue-200">Open protected Grafana <span aria-hidden="true">↗</span></a>}
                 </div>
               </article>

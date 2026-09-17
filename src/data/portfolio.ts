@@ -53,8 +53,6 @@ export const projects: Project[] = [
     stack: ["GitLab CI/CD", "Docker", "K3s", "Argo CD", "Terraform", "Vault", "OpenTelemetry", "Prometheus"],
     image: "/images/projects/devwiseops-command-center.png",
     logo: "/images/projects/logos/devwiseops.png",
-    repository: "https://gitlab.com/Mohammed_KHNine/devwiseops",
-    repositoryLabel: "Private GitLab repository",
     caseStudyHref: "/projects/devwiseops",
   },
   {
@@ -72,8 +70,6 @@ export const projects: Project[] = [
     stack: ["GCP", "OVHcloud", "Terraform", "K3s", "Argo CD", "Kustomize", "Prometheus", "Traefik"],
     image: "/images/projects/pfe/speedline-home.png",
     logo: "/images/projects/logos/speedline.png",
-    repository: "https://gitlab.com/Mohammed_KHNine/speedline",
-    repositoryLabel: "Private GitLab repository",
     caseStudyHref: "/projects/devwiseops#product-missions",
     liveUrl: "https://speedlineapp.tn",
     liveLabel: "Open production app",
@@ -93,8 +89,6 @@ export const projects: Project[] = [
     stack: ["GitLab CI/CD", "OVHcloud", "Terraform", "K3s", "Argo CD", "Helm", "Angular"],
     image: "/images/projects/pfe/planify-home.png",
     logo: "/images/projects/logos/planify.png",
-    repository: "https://gitlab.com/Mohammed_KHNine/sma",
-    repositoryLabel: "Private GitLab repository",
     caseStudyHref: "/projects/devwiseops#product-missions",
   },
   {
@@ -112,8 +106,6 @@ export const projects: Project[] = [
     stack: ["GitLab CI/CD", "Terraform", "K3s", "Argo CD", "Kustomize", "RabbitMQ", "OpenTelemetry"],
     image: "/images/projects/pfe/helpify-home.png",
     logo: "/images/projects/logos/helpify.png",
-    repository: "https://gitlab.com/Mohammed_KHNine/helpify",
-    repositoryLabel: "Private GitLab repository",
     caseStudyHref: "/projects/devwiseops#product-missions",
   },
   {
@@ -131,8 +123,6 @@ export const projects: Project[] = [
     stack: ["GitLab CI/CD", "Terraform", "K3s", "Argo CD", "Helm", "Prometheus", "Grafana", "Alertmanager"],
     image: "/images/projects/pfe/exambuilder-home.png",
     logo: "/images/projects/logos/exambuilder.jpg",
-    repository: "https://gitlab.com/Mohammed_KHNine/EXAM_GEN",
-    repositoryLabel: "Private GitLab repository",
     caseStudyHref: "/projects/devwiseops#product-missions",
     liveUrl: "https://exambuilder.tn",
     liveLabel: "Open production app",
@@ -152,8 +142,6 @@ export const projects: Project[] = [
     stack: ["Next.js", "Node.js", "Express", "MongoDB", "Stripe Connect", "Mondial Relay", "Boxtal", "Docker"],
     image: "/images/projects/soeurise.jpg",
     logo: "/images/projects/logos/soeurise.png",
-    repository: "https://github.com/mohamedaziz2025/shop-by-soeurise",
-    repositoryLabel: "Private client repository",
   },
   {
     title: "MediCore AI",
@@ -170,8 +158,6 @@ export const projects: Project[] = [
     stack: ["React", "Node.js", "Python", "PostgreSQL", "Docker", "NiFi", "Superset", "GitLab"],
     image: "/images/projects/medicore-ai.jpg",
     logo: "/images/projects/logos/medicore.png",
-    repository: "https://gitlab.com/nayer-fki/medicore-ai",
-    repositoryLabel: "Private GitLab repository",
   },
   {
     title: "DHTech Logistics",
@@ -188,8 +174,6 @@ export const projects: Project[] = [
     stack: ["Next.js", "NestJS", "Prisma", "PostgreSQL", "Redis", "Docker Compose"],
     image: "/images/projects/dhtech-logistics.jpeg",
     logo: "/images/projects/logos/dhtech.png",
-    repository: "https://gitlab.com/nayer-fki/dhtech-logistics",
-    repositoryLabel: "Private GitLab repository",
   },
   {
     title: "MEDIS Track",
@@ -206,8 +190,6 @@ export const projects: Project[] = [
     stack: ["GitLab CI/CD", "Terraform", "Docker", "Traefik", "Next.js", "Express", "Expo", "PostgreSQL"],
     image: "/images/projects/medis-track.jpg",
     logo: "/images/projects/logos/medis-track.jpeg",
-    repository: "https://gitlab.com/nayer-fki/medis-track",
-    repositoryLabel: "Private GitLab repository",
   },
   {
     title: "Secure Enterprise Network Architecture",
