@@ -137,10 +137,16 @@ export default function DevWiseOpsCaseStudy() {
                   </div>
                 </div>
                 {product.extension && <p className="mt-5 rounded-lg border border-amber-300/20 bg-amber-300/[0.06] px-3 py-2 text-xs leading-5 text-amber-200">Post-PFE extension: ExamBuilder was a complementary monitored runtime in the original report; this infrastructure work was developed separately afterward.</p>}
-                <div className="mt-5 space-y-4 text-sm leading-6 text-slate-300">
+                <div className="mt-5 text-sm leading-6 text-slate-300">
                   <p><strong className="text-white">Mission:</strong> {product.mission}</p>
-                  <p><strong className="text-white">Environments:</strong> {product.environment}</p>
-                  <p><strong className="text-white">Evidence:</strong> {product.evidence}</p>
+                  <div className="mt-4 hidden space-y-4 sm:block">
+                    <p><strong className="text-white">Environments:</strong> {product.environment}</p>
+                    <p><strong className="text-white">Evidence:</strong> {product.evidence}</p>
+                  </div>
+                  <details className="mt-4 rounded-lg border border-white/10 bg-white/[0.02] p-3 sm:hidden">
+                    <summary className="cursor-pointer font-medium text-slate-200">Environment and evidence</summary>
+                    <div className="mt-3 space-y-3 text-slate-400"><p>{product.environment}</p><p><strong className="text-slate-200">Evidence:</strong> {product.evidence}</p></div>
+                  </details>
                 </div>
                 <div className="mt-6 flex flex-wrap gap-4">
                   <a href={product.repository} target="_blank" rel="noreferrer" className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-blue-300 hover:text-blue-200"><Image src="/icons/gitlab.svg" alt="" width={17} height={17} />Open private GitLab project <span aria-hidden="true">↗</span></a>

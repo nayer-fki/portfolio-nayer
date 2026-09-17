@@ -486,13 +486,13 @@ export const certifications: Certification[] = [
 export const expertise = [
   {
     title: "DevOps Engineering",
-    description: "Repeatable delivery workflows, containerized services, automation, and operational reliability.",
-    skills: ["Docker", "CI/CD", "Linux", "Nginx", "Git", "Bash"],
+    description: "Versioned delivery workflows, infrastructure automation, GitOps promotion, and reliable runtime operations.",
+    skills: ["GitLab CI/CD", "Docker", "K3s", "Argo CD", "Terraform", "GitOps"],
   },
   {
     title: "Cloud and Infrastructure",
-    description: "Cloud environments designed with observability, networking, security, and scalability in mind.",
-    skills: ["AWS", "GCP", "Kubernetes", "VPC", "Monitoring", "Alerting"],
+    description: "Cloud environments designed with environment isolation, observability, networking, and security in mind.",
+    skills: ["OVHcloud", "GCP", "AWS", "Kubernetes", "Prometheus", "Grafana"],
   },
   {
     title: "Software Engineering",

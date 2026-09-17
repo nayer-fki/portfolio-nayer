@@ -28,7 +28,7 @@ export default function Home() {
               I build reliable systems and software that teams can trust.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-              I am Nayer Fki, an engineer focused on cloud infrastructure, delivery automation, secure networks, and maintainable full-stack applications.
+              I am Nayer Fki, a DevOps and software engineer building cloud infrastructure, GitOps delivery systems, observable platforms, and maintainable full-stack applications.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/#projects" className="inline-flex items-center gap-2 rounded-lg bg-blue-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-400">
@@ -65,8 +65,8 @@ export default function Home() {
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Engineering with an operational mindset.</h2>
           </div>
           <div className="space-y-5 text-base leading-8 text-slate-300">
-            <p>I am an engineering student specializing in networks and security, with hands-on experience across software development, cloud platforms, automation, and infrastructure operations.</p>
-            <p>My work sits between development and operations: I enjoy turning an idea into a deployable product, then making that product observable, secure, and easier to maintain.</p>
+            <p>Trained in networks and security, I now work across software development, cloud platforms, automation, and infrastructure operations.</p>
+            <p>My work connects development and operations: I turn product requirements into deployable services, then make those services observable, secure, and easier to operate.</p>
           </div>
         </div>
       </section>

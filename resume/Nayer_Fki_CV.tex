@@ -1,0 +1,106 @@
+\documentclass[9pt,a4paper]{extarticle}
+\usepackage[margin=1.05cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\hypersetup{
+  pdftitle={Nayer Fki - DevOps and Software Engineer},
+  pdfauthor={Nayer Fki},
+  pdfsubject={Professional resume}
+}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\definecolor{navy}{HTML}{102A43}
+\definecolor{muted}{HTML}{52606D}
+\titleformat{\section}{\normalsize\bfseries\color{navy}}{}{0pt}{}[\vspace{-3pt}\color{navy}\rule{\linewidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{4.5pt}{2.5pt}
+\setlist[itemize]{leftmargin=12pt,itemsep=0.4pt,topsep=1pt,parsep=0pt}
+\newcommand{\entry}[4]{%
+  \begin{tabularx}{\linewidth}{@{}Xr@{}}\textbf{#1} --- #2 & \textcolor{muted}{#3}\\\end{tabularx}%
+  \par\vspace{-4pt}{\small\textit{\textcolor{muted}{#4}}}\par\vspace{0pt}}
+\newcommand{\project}[2]{\textbf{#1}\hfill\textcolor{muted}{#2}}
+
+\begin{document}
+
+\begin{center}
+  {\fontsize{20}{22}\selectfont\bfseries\color{navy} Nayer Fki}\\[1pt]
+  {\normalsize\bfseries DevOps \& Software Engineer}\\[2pt]
+  Nabeul, Tunisia \enspace|\enspace +216 90 697 485 \enspace|\enspace
+  \href{mailto:nayerfki5@gmail.com}{nayerfki5@gmail.com}\\[2pt]
+  \href{https://www.linkedin.com/in/nayer-fki-26439026a}{linkedin.com/in/nayer-fki-26439026a} \enspace|\enspace
+  \href{https://github.com/nayer-fki}{github.com/nayer-fki} \enspace|\enspace
+  \href{https://gitlab.com/nayer-fki}{gitlab.com/nayer-fki}
+\end{center}
+
+\section*{Professional Summary}
+DevOps and software engineer experienced in cloud infrastructure, CI/CD, GitOps, observable Kubernetes workloads, and production-facing web services. Delivered a six-month engineering project at DevWise across four product contexts and a centralized operations platform. Comfortable working from infrastructure as code and runtime operations through backend APIs and modern web applications.
+
+\section*{Technical Skills}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}l X@{}}
+DevOps \& Cloud & GitLab CI/CD, GitHub Actions, Docker, Kubernetes, K3s, Argo CD, Terraform, Ansible, Helm, Kustomize, OVHcloud, GCP, AWS, Linux, Nginx, Traefik \\
+Observability \& Security & Prometheus, Grafana, Loki, Tempo, OpenTelemetry, Alertmanager, Vault, Keycloak, Gitleaks, SonarQube, Snort, SIEM, IAM \\
+Software Engineering & Python, Java, Go, TypeScript, Bash, FastAPI, Spring Boot, Node.js, Next.js, React, Angular, REST APIs, microservices \\
+Data \& Messaging & PostgreSQL, Redis, RabbitMQ, Qdrant, MinIO, Kafka, SQL, Superset, NiFi \\
+\end{tabularx}
+
+\section*{Professional Experience}
+\entry{Omnixis AI}{Software and AI Engineering Intern}{Aug 2026 -- Present}{Remote}
+\begin{itemize}
+  \item Deliver FastAPI and Next.js production features for an AI voice platform: knowledge ingestion, tenant analytics, guarded calls, AI avatars, provider failover, queues, and usage controls.
+  \item Improved staging and production delivery with self-hosted runners, Docker checks, and automated safeguards.
+\end{itemize}
+
+\entry{DevWise}{DevOps and Software Engineering Intern --- Final-Year Project}{Feb 2026 -- Aug 2026}{Nabeul, Tunisia}
+\begin{itemize}
+  \item Defined a reusable DevSecOps/GitOps model and adapted it to DevWise, Helpify, Planify, and Speedline.
+  \item Developed DevWiseOps, a microservices control plane for GitLab delivery, K3s runtime discovery, security, audit evidence, observability, operational BI, and evidence-grounded RAG.
+  \item Integrated GitLab CI/CD, Terraform, K3s, Argo CD, Vault, Keycloak, Prometheus, Loki, Tempo, OpenTelemetry, and Qdrant across Java, Go, Python, and Angular services.
+  \item Validated targeted workflows with 509 Java tests, 181 Python tests plus 12 subtests, 36 Go tests, 18/18 Prometheus targets up, and a 1,383-request read-only load probe with 0 failures.
+\end{itemize}
+
+\entry{Tunisie Telecom}{Network, Cybersecurity and Monitoring Intern}{Jul 2025 -- Aug 2025}{Nabeul, Tunisia}
+\begin{itemize}
+  \item Built segmented VLAN/DMZ and IPsec environments, hardened Cisco ASA policies, and centralized server, Snort IDS, and iptables logs for monitoring and alerting.
+\end{itemize}
+
+\section*{Selected Engineering Projects}
+\project{Speedline --- GCP to OVHcloud Infrastructure}{2026}
+\begin{itemize}
+  \item Audited legacy GCP and designed the OVHcloud K3s/GitOps target with Terraform, Argo CD, Kustomize, and 23 components; implemented logical staging/production isolation, documented physical VPS separation, and recorded 24/24 production replicas ready in a targeted validation.
+\end{itemize}
+
+\project{Planify and Helpify --- Product-Specific GitOps Delivery}{2026}
+\begin{itemize}
+  \item Provisioned K3s and Argo CD foundations, reusable Helm/Kustomize delivery, separate desired states, selective builds, staging deployment, and runtime verification through GitLab pipelines.
+\end{itemize}
+
+\project{ExamBuilder --- Production Infrastructure and Observability}{2026}
+\begin{itemize}
+  \item Built layered K3s/GitOps delivery and a Prometheus, Grafana, Alertmanager, Blackbox, node-exporter, and kube-state-metrics stack with three versioned dashboards for infrastructure, Kubernetes, and k6 signals.
+\end{itemize}
+
+\project{MediCore AI --- Medical Operations and Analytics Platform}{2026}
+\begin{itemize}
+  \item Containerized web, API, mobile, PostgreSQL, ML, NiFi, and Superset workloads; versioned 14 analytical views, 14 datasets, 39 charts, and three dashboards.
+\end{itemize}
+
+\section*{Education}
+\begin{tabularx}{\linewidth}{@{}Xr@{}}
+\textbf{IT Business School} --- Engineering Degree, Networks and Security & \textcolor{muted}{2023 -- 2026} \\
+\textbf{ISET Nabeul} --- Bachelor's Degree, Industrial Automation and Computing & \textcolor{muted}{2020 -- 2023} \\
+Technical Baccalaureate & \textcolor{muted}{2020} \\
+\end{tabularx}
+
+\section*{Selected Certifications}
+Cisco Enterprise Networking, Security and Automation (2025) \enspace|\enspace IBM Cybersecurity Analyst (2025) \enspace|\enspace Linux Essentials, Cisco (2025) \enspace|\enspace AWS Academy Machine Learning Foundations (2024) \enspace|\enspace Python 3 Programming Specialization, University of Michigan (2024)
+
+\section*{Languages}
+Arabic --- Native \enspace|\enspace French --- Professional working proficiency \enspace|\enspace English --- Working proficiency
+
+\end{document}
