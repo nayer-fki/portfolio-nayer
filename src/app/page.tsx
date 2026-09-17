@@ -49,7 +49,7 @@ export default function Home() {
               <div className="absolute -inset-px -z-10 rounded-3xl bg-gradient-to-br from-blue-400/30 to-cyan-400/5 blur-xl" />
               <Image src="/nayer.jpg" width={768} height={768} alt="Portrait of Nayer Fki" priority className="aspect-square w-full rounded-2xl object-cover" />
               <div className="grid grid-cols-3 gap-2 p-3 pb-1 pt-4 text-center">
-                <div><strong className="block text-lg text-white">7+</strong><span className="text-[11px] text-slate-400">Projects</span></div>
+                <div><strong className="block text-lg text-white">11</strong><span className="text-[11px] text-slate-400">Projects</span></div>
                 <div className="border-x border-white/10"><strong className="block text-lg text-white">9</strong><span className="text-[11px] text-slate-400">Certificates</span></div>
                 <div><strong className="block text-lg text-white">4</strong><span className="text-[11px] text-slate-400">Core areas</span></div>
               </div>
@@ -102,15 +102,19 @@ export default function Home() {
           <div><p className="eyebrow">Selected work</p><h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Projects with real engineering depth.</h2></div>
           <Link href="/projects" className="hidden items-center gap-2 text-sm font-semibold text-blue-300 hover:text-blue-200 sm:flex">All projects <Arrow /></Link>
         </div>
-        <div className="mt-10 grid gap-5 lg:grid-cols-3">
-          {projects.slice(0, 3).map((project) => (
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {projects.slice(0, 4).map((project) => (
             <article key={project.title} className="surface-card group overflow-hidden rounded-2xl">
-              <div className="overflow-hidden"><Image src={project.image} alt="" width={900} height={540} className="h-44 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105 group-hover:opacity-100" /></div>
+              <div className="relative overflow-hidden">
+                <Image src={project.image} alt="" width={900} height={540} className="h-52 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+                {project.logo && <span className="absolute bottom-4 left-4 grid h-12 w-12 place-items-center overflow-hidden rounded-xl border border-white/15 bg-white p-1.5 shadow-xl"><Image src={project.logo} alt={`${project.title} logo`} width={48} height={48} className="h-full w-full object-contain" /></span>}
+              </div>
               <div className="p-6">
                 <span className="text-xs font-semibold uppercase tracking-wider text-blue-300">{project.category}</span>
                 <h3 className="mt-2 text-lg font-semibold text-white">{project.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-400">{project.summary}</p>
                 <div className="mt-5 flex flex-wrap gap-2">{project.stack.slice(0, 4).map((item) => <span key={item} className="text-xs text-slate-300">#{item.replaceAll(" ", "")}</span>)}</div>
+                {project.caseStudyHref && <Link href={project.caseStudyHref} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-300 hover:text-blue-200">Read case study <Arrow /></Link>}
               </div>
             </article>
           ))}
@@ -158,7 +162,7 @@ export default function Home() {
             <div><p className="eyebrow">Let&apos;s work together</p><h2 className="text-balance mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Have a project or an engineering opportunity in mind?</h2><p className="mt-4 max-w-2xl leading-7 text-slate-400">I am open to DevOps, cloud, and software engineering opportunities where I can build useful systems and keep learning.</p></div>
             <div className="flex flex-col gap-3 md:items-end">
               <a href="mailto:nayerfki5@gmail.com" className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-500 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-400">Send an email <Arrow /></a>
-              <div className="flex gap-4 text-sm text-slate-400"><a href="https://github.com/nayer-fki" target="_blank" rel="noreferrer" className="hover:text-white">GitHub</a><a href="https://www.linkedin.com/in/nayer-fki-26439026a" target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn</a></div>
+              <div className="flex gap-4 text-sm text-slate-400"><a href="https://github.com/nayer-fki" target="_blank" rel="noreferrer" className="hover:text-white">GitHub</a><a href="https://gitlab.com/nayer-fki" target="_blank" rel="noreferrer" className="hover:text-white">GitLab</a><a href="https://www.linkedin.com/in/nayer-fki-26439026a" target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn</a></div>
             </div>
           </div>
         </div>

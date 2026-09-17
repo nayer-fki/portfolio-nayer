@@ -9,7 +9,10 @@ export type Project = {
   highlights: string[];
   stack: string[];
   image: string;
+  logo?: string;
   repository?: string;
+  repositoryLabel?: string;
+  caseStudyHref?: string;
 };
 
 export type Experience = {
@@ -33,6 +36,79 @@ export type Certification = {
 };
 
 export const projects: Project[] = [
+  {
+    title: "DevWiseOps — DevSecOps Governance Platform",
+    period: "February 2026 – August 2026",
+    organization: "DevWise · Final-Year Engineering Project",
+    category: "DevOps",
+    summary:
+      "Designed a multi-product DevSecOps/GitOps reference architecture and built a centralized platform that connects delivery, runtime, security, observability, and operational evidence.",
+    highlights: [
+      "Audited four heterogeneous products and adapted a common CI/CD, infrastructure-as-code, GitOps, and environment-separation standard to each context",
+      "Built a microservices control plane integrating identity and RBAC, GitLab pipelines, workspaces, managed endpoints, K3s runtime discovery, Vault-backed secrets, and audit events",
+      "Integrated Prometheus, Loki, Tempo, OpenTelemetry, security controls, evidence-grounded RAG, and operational BI while explicitly tracking validation scope and data freshness",
+    ],
+    stack: ["GitLab CI/CD", "Docker", "K3s", "Argo CD", "Terraform", "Vault", "OpenTelemetry", "Prometheus"],
+    image: "/images/projects/devwiseops-command-center.png",
+    logo: "/images/projects/logos/devwiseops.png",
+    repository: "https://gitlab.com/Mohammed_KHNine/devwiseops",
+    repositoryLabel: "Private GitLab repository",
+    caseStudyHref: "/projects/devwiseops",
+  },
+  {
+    title: "MediCore AI",
+    period: "2026",
+    organization: "Independent engineering project",
+    category: "AI",
+    summary:
+      "An intelligent medical-practice platform combining patient operations, supervised AI workflows, mobile access, and governed business intelligence.",
+    highlights: [
+      "Containerized the web, API, mobile, PostgreSQL, ML, NiFi, and Superset workloads as a reproducible multi-service environment",
+      "Versioned analytical views and dashboard provisioning, including 14 PostgreSQL views, 14 datasets, 39 charts, and three Superset dashboards",
+      "Defined the GitLab and GitOps migration path while documenting secret management, reproducibility, and recovery limitations",
+    ],
+    stack: ["React", "Node.js", "Python", "PostgreSQL", "Docker", "NiFi", "Superset", "GitLab"],
+    image: "/images/projects/medicore-ai.jpg",
+    logo: "/images/projects/logos/medicore.png",
+    repository: "https://gitlab.com/nayer-fki/medicore-ai",
+    repositoryLabel: "Private GitLab repository",
+  },
+  {
+    title: "DHTech Logistics",
+    period: "2026",
+    organization: "Industrial logistics platform",
+    category: "Software",
+    summary:
+      "A full-stack logistics and production-tracking system covering customers, orders, receipts, batches, workshop movements, stock, anomalies, and shipments.",
+    highlights: [
+      "Developed a Next.js and NestJS application with Prisma, PostgreSQL, Redis, role-based workflows, and auditable business operations",
+      "Created a Docker Compose environment with persistent services, health checks, automated migrations, seed data, and administration tooling",
+      "Validated the complete industrial flow from customer order and partial receipt through production, inventory, shipment, and audit history",
+    ],
+    stack: ["Next.js", "NestJS", "Prisma", "PostgreSQL", "Redis", "Docker Compose"],
+    image: "/images/projects/dhtech-logistics.jpeg",
+    logo: "/images/projects/logos/dhtech.png",
+    repository: "https://gitlab.com/nayer-fki/dhtech-logistics",
+    repositoryLabel: "Private GitLab repository",
+  },
+  {
+    title: "MEDIS Track",
+    period: "2026",
+    organization: "Commerce, WMS, and logistics platform",
+    category: "DevOps",
+    summary:
+      "A web and mobile logistics platform with order management, warehouse operations, fleet workflows, live tracking, and controlled multi-environment delivery.",
+    highlights: [
+      "Built GitLab CI quality gates for unit and integration tests, production builds, container publishing, and smoke validation",
+      "Provisioned VPS and DNS foundations with Terraform and secured HTTPS ingress with Traefik, isolated networks, environments, data, and secrets",
+      "Implemented immutable SHA-tagged releases, automatic staging delivery, manual production promotion, health-based rollback, and pre-migration PostgreSQL backups",
+    ],
+    stack: ["GitLab CI/CD", "Terraform", "Docker", "Traefik", "Next.js", "Express", "Expo", "PostgreSQL"],
+    image: "/images/projects/medis-track.jpg",
+    logo: "/images/projects/logos/medis-track.jpeg",
+    repository: "https://gitlab.com/nayer-fki/medis-track",
+    repositoryLabel: "Private GitLab repository",
+  },
   {
     title: "Secure Enterprise Network Architecture",
     period: "March 2025 – May 2025",
@@ -145,6 +221,36 @@ export const projects: Project[] = [
 ];
 
 export const experiences: Experience[] = [
+  {
+    company: "Omnixis AI",
+    role: "Software and AI Engineering Intern",
+    type: "Internship",
+    location: "Remote",
+    period: "August 2026 – Present",
+    logo: "/images/companies/omnixis.png",
+    highlights: [
+      "Delivered production features across a FastAPI backend and Next.js frontend for an AI-powered voice-calling platform",
+      "Built AI avatar generation, provider failover, queue orchestration, and live usage controls around FLUX and Hugging Face",
+      "Implemented website knowledge ingestion, guarded public call flows, tenant-scoped analytics, and telephony workflows",
+      "Improved staging and production delivery through self-hosted runners, Docker-based checks, and automated deployment safeguards",
+    ],
+    stack: ["FastAPI", "Next.js", "Python", "TypeScript", "Docker", "CI/CD", "Azure", "Cloudflare"],
+  },
+  {
+    company: "DevWise",
+    role: "DevOps and Software Engineering Intern — Final-Year Project",
+    type: "Six-month internship",
+    location: "Nabeul, Tunisia",
+    period: "February 2026 – August 2026",
+    logo: "/images/companies/devwise.png",
+    highlights: [
+      "Defined and applied a multi-product DevSecOps/GitOps reference model across heterogeneous software products",
+      "Developed DevWiseOps, a microservices platform for delivery governance, runtime visibility, security, audit, RAG, and operational analytics",
+      "Integrated GitLab, K3s, Argo CD, Vault, Keycloak, Prometheus, Loki, Tempo, OpenTelemetry, and Qdrant",
+      "Validated targeted workflows with automated Java, Go, Python, Playwright, smoke, and load-testing suites",
+    ],
+    stack: ["DevSecOps", "GitOps", "GitLab CI/CD", "K3s", "Terraform", "Spring Boot", "Angular", "Observability"],
+  },
   {
     company: "Tunisie Telecom",
     role: "Network, Cybersecurity and Monitoring Intern",

@@ -39,6 +39,9 @@ export default function Navbar() {
           <a href="https://www.linkedin.com/in/nayer-fki-26439026a" target="_blank" rel="noreferrer" className="rounded-lg p-2 opacity-70 transition hover:bg-white/5 hover:opacity-100" aria-label="LinkedIn profile">
             <Image src="/icons/linkedin.svg" alt="" width={18} height={18} />
           </a>
+          <a href="https://gitlab.com/nayer-fki" target="_blank" rel="noreferrer" className="rounded-lg p-2 opacity-70 transition hover:bg-white/5 hover:opacity-100" aria-label="GitLab profile">
+            <Image src="/icons/gitlab.svg" alt="" width={18} height={18} />
+          </a>
           <a href="/Nayer_Fki_CV.pdf" className="ml-2 rounded-lg bg-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-400">Resume</a>
         </div>
 
@@ -55,6 +58,11 @@ export default function Navbar() {
             {navigation.map((item) => (
               <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm text-slate-300 hover:bg-white/5 hover:text-white">{item.label}</Link>
             ))}
+            <div className="mt-2 flex gap-4 px-3 text-sm text-slate-400">
+              <a href="https://github.com/nayer-fki" target="_blank" rel="noreferrer" className="hover:text-white">GitHub</a>
+              <a href="https://gitlab.com/nayer-fki" target="_blank" rel="noreferrer" className="hover:text-white">GitLab</a>
+              <a href="https://www.linkedin.com/in/nayer-fki-26439026a" target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn</a>
+            </div>
             <a href="/Nayer_Fki_CV.pdf" className="mt-2 rounded-lg bg-blue-500 px-3 py-2.5 text-center text-sm font-semibold text-white">Download resume</a>
           </div>
         </div>

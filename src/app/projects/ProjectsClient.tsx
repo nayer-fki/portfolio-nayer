@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { Project, ProjectCategory } from "@/data/portfolio";
 
@@ -39,7 +40,10 @@ export default function ProjectsClient({ projects }: { projects: Project[] }) {
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         {visibleProjects.map((project) => (
           <article key={project.title} className="surface-card group overflow-hidden rounded-2xl">
-            <div className="overflow-hidden"><Image src={project.image} alt="" width={1200} height={640} className="h-52 w-full object-cover opacity-85 transition duration-500 group-hover:scale-[1.02] group-hover:opacity-100" /></div>
+            <div className="relative overflow-hidden">
+              <Image src={project.image} alt="" width={1200} height={640} className="h-52 w-full object-cover opacity-85 transition duration-500 group-hover:scale-[1.02] group-hover:opacity-100" />
+              {project.logo && <span className="absolute bottom-4 left-4 grid h-12 w-12 place-items-center overflow-hidden rounded-xl border border-white/15 bg-white p-1.5 shadow-xl"><Image src={project.logo} alt={`${project.title} logo`} width={48} height={48} className="h-full w-full object-contain" /></span>}
+            </div>
             <div className="p-6">
               <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
                 <span className="font-semibold uppercase tracking-wider text-blue-300">{project.category}</span>
@@ -52,7 +56,10 @@ export default function ProjectsClient({ projects }: { projects: Project[] }) {
                 {project.highlights.map((highlight) => <li key={highlight} className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400" /><span>{highlight}</span></li>)}
               </ul>
               <div className="mt-5 flex flex-wrap gap-2">{project.stack.map((item) => <span key={item} className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs text-slate-300">{item}</span>)}</div>
-              {project.repository && <a href={project.repository} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-300 hover:text-blue-200"><Image src="/icons/github.svg" alt="" width={16} height={16} />View repository <span aria-hidden="true">↗</span></a>}
+              <div className="mt-6 flex flex-wrap gap-4">
+                {project.caseStudyHref && <Link href={project.caseStudyHref} className="text-sm font-semibold text-blue-300 hover:text-blue-200">Read case study <span aria-hidden="true">→</span></Link>}
+                {project.repository && <a href={project.repository} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-300 hover:text-blue-200"><Image src={project.repository.includes("gitlab.com") ? "/icons/gitlab.svg" : "/icons/github.svg"} alt="" width={16} height={16} />{project.repositoryLabel ?? "View repository"} <span aria-hidden="true">↗</span></a>}
+              </div>
             </div>
           </article>
         ))}
