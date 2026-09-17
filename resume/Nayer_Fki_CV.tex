@@ -1,5 +1,5 @@
 \documentclass[9pt,a4paper]{extarticle}
-\usepackage[margin=1.05cm]{geometry}
+\usepackage[margin=1.15cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -16,15 +16,18 @@
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{1em}
 \definecolor{navy}{HTML}{102A43}
 \definecolor{muted}{HTML}{52606D}
 \titleformat{\section}{\normalsize\bfseries\color{navy}}{}{0pt}{}[\vspace{-3pt}\color{navy}\rule{\linewidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{4.5pt}{2.5pt}
-\setlist[itemize]{leftmargin=12pt,itemsep=0.4pt,topsep=1pt,parsep=0pt}
+\titlespacing*{\section}{0pt}{5pt}{3pt}
+\setlist[itemize]{leftmargin=12pt,itemsep=0.6pt,topsep=1.5pt,parsep=0pt}
 \newcommand{\entry}[4]{%
-  \begin{tabularx}{\linewidth}{@{}Xr@{}}\textbf{#1} --- #2 & \textcolor{muted}{#3}\\\end{tabularx}%
-  \par\vspace{-4pt}{\small\textit{\textcolor{muted}{#4}}}\par\vspace{0pt}}
-\newcommand{\project}[2]{\textbf{#1}\hfill\textcolor{muted}{#2}}
+  \begin{tabularx}{\linewidth}{@{}Xr@{}}
+    \textbf{\textcolor{navy}{#1}} & \textcolor{muted}{#3}\\[-2pt]
+    \textit{#2} & \small\textit{\textcolor{muted}{#4}}\\
+  \end{tabularx}\vspace{-4pt}}
+\newcommand{\project}[2]{\textbf{\textcolor{navy}{#1}}\hfill\textcolor{muted}{#2}}
 
 \begin{document}
 
@@ -33,21 +36,23 @@
   {\normalsize\bfseries DevOps \& Software Engineer}\\[2pt]
   Nabeul, Tunisia \enspace|\enspace +216 90 697 485 \enspace|\enspace
   \href{mailto:nayerfki5@gmail.com}{nayerfki5@gmail.com}\\[2pt]
-  \href{https://www.linkedin.com/in/nayer-fki-26439026a}{LinkedIn} \enspace|\enspace
-  \href{https://github.com/nayer-fki}{GitHub} \enspace|\enspace
-  \href{https://gitlab.com/nayer-fki}{GitLab}
+  \textcolor{navy}{\href{https://www.linkedin.com/in/nayer-fki-26439026a}{LinkedIn}} \enspace|\enspace
+  \textcolor{navy}{\href{https://github.com/nayer-fki}{GitHub}} \enspace|\enspace
+  \textcolor{navy}{\href{https://gitlab.com/nayer-fki}{GitLab}}
 \end{center}
 
 \section*{Professional Summary}
-DevOps and software engineer experienced in cloud infrastructure, CI/CD, GitOps, observable Kubernetes workloads, and production-facing web services. Delivered a six-month engineering project at DevWise across four product contexts and a centralized operations platform. Comfortable working from infrastructure as code and runtime operations through backend APIs and modern web applications.
+DevOps and software engineer experienced in cloud infrastructure, CI/CD, GitOps, observable Kubernetes workloads, and production-facing web services. Delivered a six-month engineering project at DevWise across four product contexts and a centralized operations platform. Able to work from infrastructure as code and runtime operations through backend APIs and modern web applications.
 
 \section*{Technical Skills}
+\renewcommand{\arraystretch}{1.08}
 \begin{tabularx}{\linewidth}{@{}>{\bfseries}l X@{}}
-DevOps \& Cloud & GitLab CI/CD, GitHub Actions, Docker, Kubernetes, K3s, Argo CD, Terraform, Ansible, Helm, Kustomize, OVHcloud, GCP, AWS, Linux, Nginx, Traefik \\
-Observability \& Security & Prometheus, Grafana, Loki, Tempo, OpenTelemetry, Alertmanager, Vault, Keycloak, Gitleaks, SonarQube, Snort, SIEM, IAM \\
-Software Engineering & Python, Java, Go, TypeScript, Bash, FastAPI, Spring Boot, Node.js, Next.js, React, Angular, REST APIs, microservices \\
-Data \& Messaging & PostgreSQL, Redis, RabbitMQ, Qdrant, MinIO, Kafka, SQL, Superset, NiFi \\
+Platform Engineering & GitLab CI/CD, Docker, Kubernetes, K3s, Argo CD, Terraform, Ansible, Helm, Kustomize, GitOps \\
+Cloud \& Operations & OVHcloud, GCP, AWS, Linux, Nginx, Traefik, Prometheus, Grafana, Loki, Tempo, OpenTelemetry, Alertmanager \\
+Software Engineering & Python, Java, Go, TypeScript, Bash, FastAPI, Spring Boot, Node.js, Next.js, React, Angular, REST APIs \\
+Security \& Data & Vault, Keycloak, Gitleaks, SonarQube, Snort, SIEM, PostgreSQL, Redis, RabbitMQ, Qdrant, MinIO, Kafka \\
 \end{tabularx}
+\renewcommand{\arraystretch}{1}
 
 \section*{Professional Experience}
 \entry{Omnixis AI}{Software and AI Engineering Intern}{Aug 2026 -- Present}{Remote}
@@ -59,8 +64,7 @@ Data \& Messaging & PostgreSQL, Redis, RabbitMQ, Qdrant, MinIO, Kafka, SQL, Supe
 \entry{DevWise}{DevOps and Software Engineering Intern --- Final-Year Project}{Feb 2026 -- Aug 2026}{Nabeul, Tunisia}
 \begin{itemize}
   \item Defined a reusable DevSecOps/GitOps model and adapted it to DevWise, Helpify, Planify, and Speedline.
-  \item Developed DevWiseOps, a microservices control plane for GitLab delivery, K3s runtime discovery, security, audit evidence, observability, operational BI, and evidence-grounded RAG.
-  \item Integrated GitLab CI/CD, Terraform, K3s, Argo CD, Vault, Keycloak, Prometheus, Loki, Tempo, OpenTelemetry, and Qdrant across Java, Go, Python, and Angular services.
+  \item Developed DevWiseOps for GitLab delivery, K3s runtime discovery, security, audit evidence, observability, BI, and evidence-grounded RAG; integrated Terraform, Argo CD, Vault, Keycloak, Prometheus, Loki, Tempo, OpenTelemetry, and Qdrant.
   \item Validated targeted workflows with 509 Java tests, 181 Python tests plus 12 subtests, 36 Go tests, 18/18 Prometheus targets up, and a 1,383-request read-only load probe with 0 failures.
 \end{itemize}
 
