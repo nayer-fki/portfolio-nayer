@@ -37,7 +37,7 @@ export default function Navbar() {
           <a href="https://github.com/nayer-fki" target="_blank" rel="noreferrer" className="rounded-lg p-2 opacity-70 transition hover:bg-white/5 hover:opacity-100" aria-label="GitHub profile">
             <Image src="/icons/github.svg" alt="" width={18} height={18} />
           </a>
-          <a href="https://www.linkedin.com/in/nayer-fki-26439026a" target="_blank" rel="noreferrer" className="rounded-lg p-2 opacity-70 transition hover:bg-white/5 hover:opacity-100" aria-label="LinkedIn profile">
+          <a href="https://www.linkedin.com/in/nayer-fki" target="_blank" rel="noreferrer" className="rounded-lg p-2 opacity-70 transition hover:bg-white/5 hover:opacity-100" aria-label="LinkedIn profile">
             <Image src="/icons/linkedin.svg" alt="" width={18} height={18} />
           </a>
           <a href="https://gitlab.com/nayer-fki" target="_blank" rel="noreferrer" className="rounded-lg p-2 opacity-70 transition hover:bg-white/5 hover:opacity-100" aria-label="GitLab profile">
@@ -63,7 +63,7 @@ export default function Navbar() {
             <div className="mt-2 flex items-center gap-4 px-3 text-sm text-slate-400">
               <a href="https://github.com/nayer-fki" target="_blank" rel="noreferrer" className="hover:text-white">GitHub</a>
               <a href="https://gitlab.com/nayer-fki" target="_blank" rel="noreferrer" className="hover:text-white">GitLab</a>
-              <a href="https://www.linkedin.com/in/nayer-fki-26439026a" target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/nayer-fki" target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn</a>
               <ThemeToggle />
             </div>
             <a href="/Nayer_Fki_CV.pdf" className="mt-2 rounded-lg bg-blue-500 px-3 py-2.5 text-center text-sm font-semibold text-white">Download resume</a>

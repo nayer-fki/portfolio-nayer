@@ -165,7 +165,7 @@ export default function Home() {
             <div><p className="eyebrow">Let&apos;s work together</p><h2 className="text-balance mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Have a project or an engineering opportunity in mind?</h2><p className="mt-4 max-w-2xl leading-7 text-slate-400">I am open to DevOps, cloud, and software engineering opportunities where I can build useful systems and keep learning.</p></div>
             <div className="flex flex-col gap-3 md:items-end">
               <a href="mailto:nayerfki5@gmail.com" className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-500 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-400">Send an email <Arrow /></a>
-              <div className="flex gap-4 text-sm text-slate-400"><a href="https://github.com/nayer-fki" target="_blank" rel="noreferrer" className="hover:text-white">GitHub</a><a href="https://gitlab.com/nayer-fki" target="_blank" rel="noreferrer" className="hover:text-white">GitLab</a><a href="https://www.linkedin.com/in/nayer-fki-26439026a" target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn</a></div>
+              <div className="flex gap-4 text-sm text-slate-400"><a href="https://github.com/nayer-fki" target="_blank" rel="noreferrer" className="hover:text-white">GitHub</a><a href="https://gitlab.com/nayer-fki" target="_blank" rel="noreferrer" className="hover:text-white">GitLab</a><a href="https://www.linkedin.com/in/nayer-fki" target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn</a></div>
             </div>
           </div>
         </div>
