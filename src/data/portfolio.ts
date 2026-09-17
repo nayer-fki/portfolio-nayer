@@ -338,7 +338,7 @@ export const experiences: Experience[] = [
     role: "Freelance Software Integration Engineer",
     type: "Freelance",
     location: "Remote",
-    period: "2026",
+    period: "January 2026 – May 2026",
     logo: "/images/companies/cafee-agency.jpeg",
     highlights: [
       "Extended the Sœurise multi-vendor marketplace across customer, seller, and administrator workflows",
